@@ -1,0 +1,79 @@
+# ────────────────────────────────────────────────────────────────
+# Alacritty Configuration — “Cyber-Lain” Theme
+# Tailored for Hyprland (blur passes = 4, opacity = 0.8)
+# ────────────────────────────────────────────────────────────────
+
+[general]
+live_config_reload = true
+working_directory = "None"
+
+[font]
+normal = { family="DepartureMonoNerdFont", style="Regular"}
+
+[window]
+padding = { x = 3, y = 3 }
+dynamic_padding = true
+opacity = 0.8
+blur = true
+startup_mode = "Windowed"
+title = "Alacritty"
+dynamic_title = true
+dimensions = { columns = 0, lines = 0 }
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+unfocused_hollow = true
+thickness = 0.15
+smooth_motion_factor=0.5
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\\t"
+save_to_clipboard = true
+
+[bell]
+animation = "Linear"
+duration = 0
+color = "#ffffff"
+command = "None"
+
+# ───────────────────────────
+#  Colors — Cyber Lain theme
+# ───────────────────────────
+[colors.primary]
+background = "#0e0b1c"
+foreground = "#d0d0ff"
+
+[colors.cursor]
+text = "#0e0b1c"
+cursor = "#8aa9ff"
+
+[colors.selection]
+text = "#d0d0ff"
+background = "#2c2560"
+
+[colors.normal]
+black   = "#1a162b"
+red     = "#ff7b89"
+green   = "#8fffa2"
+yellow  = "#f5d37c"
+blue    = "#6aa9ff"
+magenta = "#b58cff"
+cyan    = "#6cf0ff"
+white   = "#d0d0ff"
+
+[colors.bright]
+black   = "#2c2560"
+red     = "#ff92a0"
+green   = "#9fffb3"
+yellow  = "#ffe599"
+blue    = "#8bb8ff"
+magenta = "#cba4ff"
+cyan    = "#8cf7ff"
+white   = "#f0f0ff"
+
+[colors]
+transparent_background_colors = true
