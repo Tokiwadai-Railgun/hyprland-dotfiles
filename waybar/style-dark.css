@@ -1,0 +1,210 @@
+* {
+    border: none;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #000000;
+    border-radius: 7px;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #ffb4a2;
+}
+
+#workspaces button {
+    color: #7a8499; /* Muted Blue-Grey */
+    margin-right: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#workspaces button.active {
+    color: #ffb4a2; /* Winter Forest Peach */
+}
+
+#workspaces button.focused {
+    color: #1e1e2e;
+    background: #ffb4a2;
+    border-radius: 13px;
+}
+
+#workspaces button.persistent {
+    color: #ffccaa; /* Winter Forest Gold */
+}
+
+#workspaces button.empty {
+    color: #313244;
+}
+
+#workspaces button.active,
+#workspaces button.visible {
+    color: #ffb4a2;
+    box-shadow: inset 0 -1px #1e1e2e;
+}
+
+#workspaces button.urgent {
+    color: #e68f9a;
+}
+
+/* Base Module Background */
+#custom-weather,
+#language,
+#cpu,
+#window,
+#clock,
+#pulseaudio,
+#pulseaudio.microphone,
+#workspaces,
+#tray,
+#memory,
+#disk,
+#battery,
+#tray {
+    background: #1e1e2e;
+    opacity: 1.0;
+    padding: 1.5px 7px 1.5px 7px;
+    border-radius: 13px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #e5e9f0; /* Default Text Color */
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 13px;
+    margin-left: 5px;
+    padding-right: 0px;
+}
+
+#window {
+    border-radius: 7px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* --- UPDATED: High Contrast Modules --- */
+
+/* Battery: Pure White for Max Contrast */
+#battery {
+    color: #ffffff;
+    font-weight: 900; /* Extra Bold */
+    margin-right: 5px;
+}
+
+/* Charging State: Bright Sunlight Gold */
+#battery.charging {
+    color: #ffccaa; 
+}
+
+/* Warning/Critical: Bright Red/Pink */
+#battery.warning, #battery.critical {
+    color: #ff8888;
+}
+
+/* Language: Pure White */
+#language {
+    color: #ffffff;
+    font-weight: 900; /* Extra Bold */
+    border-radius: 13px 0px 0px 13px;
+    margin-right: 0px;
+}
+
+/* --- End Updates --- */
+
+#clock {
+    color: #89a0c2; /* Ice Blue */
+    border-radius: 0px 13px 13px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#network {
+    color: #ffccaa;
+    border-radius: 7px 7px 7px 7px;
+    margin-right: 5px;
+}
+
+#custom-notifications {
+    color: #ffccaa;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 9px;
+    padding-right: 15px;
+    margin-left:  2px;
+    margin-right: 2px;
+}
+
+#custom-updates {
+    color: #ffb4a2;
+    border-radius: 7px 7px 7px 7px;
+    border-left:  0px;
+    border-right: 0px;
+    margin-left:  2px;
+    margin-right: 2px;
+}
+
+#custom-player {
+    color: #c4b7d7;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 4px;
+    margin-left:  5px;
+    margin-right: 5px;
+}
+
+#memory {
+    color: #89a0c2; /* Ice Blue */
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right:0px;
+}
+
+#disk {
+    color: #dcb3a4; /* Muted Peach */
+    border-radius: 0px 13px 13px 0px;
+    margin-left: 0px;
+}
+
+#bluetooth {
+    color: #89a0c2;
+    border-radius: 0px 13px 13px 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+} 
+
+#pulseaudio {
+    color: #c4b7d7; /* Lilac */
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #c4b7d7; /* Lilac */
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#cpu {
+    border-radius: 13px 0px 0px 13px;
+    padding-left:10px;
+    margin-right:0px;
+    margin-left: 0px;
+    color: #e68f9a; /* Soft Red */
+}
+
+#custom-weather {
+    border-radius: 13px 13px 13px 13px;
+    margin-right: 0px;
+    color: #ffccaa;
+}
