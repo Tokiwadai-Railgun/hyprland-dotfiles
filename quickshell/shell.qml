@@ -1,4 +1,3 @@
-# test quickshell
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
@@ -8,65 +7,89 @@ import Quickshell.Services.UPower
 import Quickshell.Widgets
 import "components"
 
-PanelWindow {
-		id: root
-		property color colBg: "#dad4bb"
-		property color colFg: "#504d44"
-		property color colSecondaryBg: "#4e4b42"
-		property color colSelectedBg: "#4e4b42"
-		property color colSelectedFg: "#c2bca5"
+Variants {
+		model: Quickshell.screens;
 
-		property color red: "#cd664d"
-		property color blue: "#56949f"
-		property color yellow: "#f8ecaf"
-		property color green: "#286983"
+		delegate: Component {
+				MusicPlayer {}
+				PanelWindow {
+						required property var modelData
+						screen: modelData
 
-		property string fontFamily: "HermutNerdFont"
-		property var numbers: ["一", "二", "三", "四", "五", "六", "七", "八", "九"]
-		implicitHeight: 30
+						id: root
+						property color colBg: "#dad4bb"
+						property color colFg: "#504d44"
+						property color colSecondaryBg: "#4e4b42"
+						property color colSelectedBg: "#4e4b42"
+						property color colSelectedFg: "#c2bca5"
 
-		color: "transparent"
+						property color red: "#cd664d"
+						property color blue: "#56949f"
+						property color yellow: "#f8ecaf"
+						property color green: "#286983"
 
-		anchors {
-				top: true
-				left: true
-				right: true
-		}
+						property string fontFamily: "HermutNerdFont"
+						property var numbers: ["一", "二", "三", "四", "五", "六", "七", "八", "九"]
+						implicitHeight: 30
 
-		RowLayout {
-				anchors.fill: parent
-				anchors.margins: 8
-				BatteryInfo {}
+						color: "transparent"
 
-				Repeater {
-						model: 9
+						anchors {
+								top: true
+								left: true
+								right: true
+						}
 
-						WrapperRectangle {
-								property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
-								property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
+						RowLayout {
+								anchors.fill: parent
+								anchors.margins: 8
+								Loader {
+										sourceComponent: UPower.type == "Battery" ? batteryPresent : batteryMissing
+								}
 
-								implicitWidth: 40
-								color: isActive ? colSelectedBg : "transparent"
+								Component {
+										id: batteryPresent
+										BatteryInfo {} 
+								}
 
-								Text {
-										anchors.fill: parent
-										text: numbers[index]
-										// text: index + 1
-										color: isActive ? red : (ws ? blue : colFg)
-										font { pixelSize: 12; bold: true }
+								Component {
+										id: batteryMissing
+										Text { text: "NO_BAT"; color: root.red; font.family: root.fontFamily }
+								}
+
+								Repeater {
+										model: 9
+
+										WrapperRectangle {
+												property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
+												property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
+
+												implicitWidth: 40
+												color: isActive ? colSelectedBg : "transparent"
+
+												Text {
+														anchors.fill: parent
+														text: numbers[index]
+														// text: index + 1
+														color: isActive ? red : (ws ? blue : colFg)
+														font { pixelSize: 12; bold: true }
+
+														horizontalAlignment: Text.AlignHCenter
+														verticalAlignment: Text.AlignVCenter
 
 
-
-										MouseArea {
-												anchors.fill: parent
-												onClicked: Hyprland.dispatch("workspace " + (index + 1))
+														MouseArea {
+																anchors.fill: parent
+																onClicked: Hyprland.dispatch("workspace " + (index + 1))
+														}
+												}
 										}
 								}
+
+								Item { Layout.fillWidth: true }
+
 						}
+
 				}
-
-				Item { Layout.fillWidth: true }
-
 		}
-
 }
