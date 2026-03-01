@@ -11,7 +11,6 @@ Variants {
 		model: Quickshell.screens;
 
 		delegate: Component {
-				MusicPlayer {}
 				PanelWindow {
 						required property var modelData
 						screen: modelData
@@ -44,7 +43,7 @@ Variants {
 								anchors.fill: parent
 								anchors.margins: 8
 								Loader {
-										sourceComponent: UPower.type == "Battery" ? batteryPresent : batteryMissing
+										sourceComponent: UPower.displayDevice?.isLaptopBattery ? batteryPresent : batteryMissing
 								}
 
 								Component {

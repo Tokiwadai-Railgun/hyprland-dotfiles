@@ -6,7 +6,7 @@ import QtQuick
 
 RowLayout {
 		spacing: 2
-    readonly property color col: battery <= 20 ? root.red : root.colFg
+    readonly property color col: UPower.displayDevice?.state == 1 ? root.yellow : (battery <= 20 ? root.red : root.colFg)
 		readonly property int battery: Math.round(UPower.displayDevice?.percentage * 100 ?? 0)
 
 		WrapperRectangle {
