@@ -6,3 +6,4 @@
 #
 
 ln -s ./quickshell/ ~/.config/quickshell
+ln -s ./hypr/ ~/.config/hypr
