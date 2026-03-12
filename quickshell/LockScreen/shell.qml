@@ -6,8 +6,8 @@ ShellRoot {
 				id: lockContext
 
 				onUnlocked {
-						lock.locked = false;
-						Qt.quit();
+						lock.locked: false;
+						Qt.quit()
 				}
 		}
 
