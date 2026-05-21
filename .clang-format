@@ -1,0 +1,24 @@
+# ~/.clang-format
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 120
+
+# Braces on same line (K&R / "Attach" style)
+BreakBeforeBraces: Attach
+
+# Align declarations and assignments
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignTrailingComments: true
+
+# Sort includes
+SortIncludes: true
+IncludeBlocks: Regroup
+
+# Keep things compact like Rust
+AllowShortBlocksOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
