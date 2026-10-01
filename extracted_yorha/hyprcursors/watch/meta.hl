@@ -1,4 +1,4 @@
-resize_algorithm = none
+resize_algorithm = bilinear
 hotspot_x = 0.16
 hotspot_y = 0.16
 
