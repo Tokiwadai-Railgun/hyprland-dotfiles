@@ -10,3 +10,4 @@ This config uses the following tools :
 
 # Credits
 * cursors : https://www.deviantart.com/juliodrai/art/Nier%3AAutomata-Cursor-[Hack-Edition]-v2-736152335
+* QuickShell Notifications : https://github.com/doannc2212/quickshell-config/tree/main/notifications 

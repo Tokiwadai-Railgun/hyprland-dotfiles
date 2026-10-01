@@ -6,6 +6,7 @@ import Quickshell.Hyprland
 import Quickshell.Services.UPower
 import Quickshell.Widgets
 import "components"
+import "notifications"
 
 Variants {
 		model: Quickshell.screens;
@@ -91,4 +92,7 @@ Variants {
 
 				}
 		}
+
+	NotificationPopup { }
 }
+

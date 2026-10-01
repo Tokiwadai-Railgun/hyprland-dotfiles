@@ -61,10 +61,10 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("darkman run")
 end)
 
--- Exec (run every reload)
-hl.on("config.reloaded", function()
-    hl.exec_cmd("mako")
-end)
+-- -- Exec (run every reload)
+-- hl.on("config.reloaded", function()
+--     hl.exec_cmd("mako")
+-- end)
 
 --############################
 --## ENVIRONMENT VARIABLES ###
