@@ -1,0 +1,8 @@
+resize_algorithm = none
+hotspot_x = 0.25
+hotspot_y = 0.06
+
+define_size = 32, center_ptr_000.png, 167
+
+define_override = up-arrow
+define_override = up_arrow

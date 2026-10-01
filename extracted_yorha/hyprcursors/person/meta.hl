@@ -1,0 +1,6 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.03
+
+define_size = 32, person_000.png, 167
+

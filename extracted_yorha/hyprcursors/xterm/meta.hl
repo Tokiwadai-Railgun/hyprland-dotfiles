@@ -1,0 +1,8 @@
+resize_algorithm = none
+hotspot_x = 0.47
+hotspot_y = 0.47
+
+define_size = 32, xterm_000.png, 167
+
+define_override = ibeam
+define_override = text

@@ -1,0 +1,9 @@
+resize_algorithm = none
+hotspot_x = 0.00
+hotspot_y = 0.03
+
+define_size = 32, left_ptr_000.png, 167
+
+define_override = default
+define_override = arrow
+define_override = top_left_arrow
