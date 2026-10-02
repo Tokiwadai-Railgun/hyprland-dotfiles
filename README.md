@@ -7,6 +7,8 @@ This config uses the following tools :
 - DE: Hyprland
 - App Launcher : Fuzzel
 - Idle Managment : HyprIdle
+- Notification : Quickshell
+- Status Bar : Quickshell
 
 # Credits
 * cursors : https://www.deviantart.com/juliodrai/art/Nier%3AAutomata-Cursor-[Hack-Edition]-v2-736152335

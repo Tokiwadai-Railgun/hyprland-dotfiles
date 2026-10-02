@@ -71,17 +71,16 @@ Scope {
 
                         Layout.fillWidth: true
                         Layout.preferredHeight: cardContent.implicitHeight + 24
-                        radius: 12
                         color: root.theme.bgBase
                         border.color: modelData.urgency === NotificationUrgency.Critical ? root.theme.urgencyCritical :
-                                      modelData.urgency === NotificationUrgency.Low     ? root.theme.urgencyLow     : root.theme.bgBorder
+                        modelData.urgency === NotificationUrgency.Low     ? root.theme.urgencyLow     : root.theme.bgBorder
                         border.width: 1
                         clip: true
 
                         Accessible.role: Accessible.StaticText
                         Accessible.name: (modelData.urgency === NotificationUrgency.Critical ? "[Critical] " :
-                                         modelData.urgency === NotificationUrgency.Low       ? "[Low] "      : "") +
-                                         (modelData.appName || "Notification") + ": " + modelData.summary
+                        modelData.urgency === NotificationUrgency.Low       ? "[Low] "      : "") +
+                        (modelData.appName || "Notification") + ": " + modelData.summary
 
                         HoverHandler {
                             id: cardHover
@@ -98,14 +97,21 @@ Scope {
                         Component.onCompleted: entryAnim.start()
 
                         Rectangle {
-                            width: 3
-                            height: parent.height - 16
-                            radius: 2
+                            width: 5
+                            height: parent.height
                             anchors.left: parent.left
-                            anchors.leftMargin: 6
+                            anchors.verticalCenter: parent.verticalCenter
+                            color: root.theme.accentPrimary
+                        }
+
+                        Rectangle {
+                            width: 2
+                            anchors.leftMargin: 8
+                            height: parent.height
+                            anchors.left: parent.left
                             anchors.verticalCenter: parent.verticalCenter
                             color: notifCard.modelData.urgency === NotificationUrgency.Critical ? root.theme.urgencyCritical :
-                                   notifCard.modelData.urgency === NotificationUrgency.Low      ? root.theme.urgencyLow      : root.theme.urgencyNormal
+                            notifCard.modelData.urgency === NotificationUrgency.Low      ? root.theme.urgencyLow      : root.theme.urgencyNormal
                         }
 
                         ColumnLayout {
@@ -148,7 +154,7 @@ Scope {
                                             return "󰂚";
                                         }
                                         color: notifCard.modelData.urgency === NotificationUrgency.Critical
-                                               ? root.theme.urgencyCritical : root.theme.urgencyNormal
+                                        ? root.theme.urgencyCritical : root.theme.urgencyNormal
                                         font.pixelSize: 14
                                         font.family: root.font
                                     }
@@ -296,7 +302,7 @@ Scope {
                                     width: parent.width
                                     radius: 1
                                     color: notifCard.modelData.urgency === NotificationUrgency.Critical
-                                           ? root.theme.urgencyCritical : root.theme.urgencyNormal
+                                    ? root.theme.urgencyCritical : root.theme.urgencyNormal
                                     opacity: 0.6
 
                                     SequentialAnimation {
@@ -307,8 +313,8 @@ Scope {
                                             property: "width"
                                             to: 0
                                             duration: notifCard.modelData.expireTimeout > 0
-                                                      ? notifCard.modelData.expireTimeout
-                                                      : notifCard.modelData.defaultTimeout  // no * 1000: matches the timer — Quickshell passes raw D-Bus ms
+                                            ? notifCard.modelData.expireTimeout
+                                            : notifCard.modelData.defaultTimeout  // no * 1000: matches the timer — Quickshell passes raw D-Bus ms
                                         }
                                     }
                                 }

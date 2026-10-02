@@ -13,21 +13,21 @@ Singleton {
 	property int _seqCounter: 0;
 
 	Component {
-		id: notificatioDataComp
+		id: notificationDataComp
 		NotificationData {}
 	}
 
 	NotificationServer {
-        id: server
-        actionsSupported:    true
-        bodySupported:       true
-        bodyMarkupSupported: true
-        imageSupported:      true
-        keepOnReload:        false
+		id: server
+		actionsSupported:    true
+		bodySupported:       true
+		bodyMarkupSupported: true
+		imageSupported:      true
+		keepOnReload:        false
 
 		onNotification: function (notification) {
 			if (doNotDistrubt == true) return;
-	
+
 			if (!notification.appName && !notification.summary && !notification.body && !notification.image) return;
 
 			notification.tracked = true;
