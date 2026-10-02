@@ -64,6 +64,7 @@ Scope {
                         objectProp: "seqId"
                     }
 
+
                     Rectangle {
                         id: notifCard
                         required property var modelData
@@ -72,9 +73,6 @@ Scope {
                         Layout.fillWidth: true
                         Layout.preferredHeight: cardContent.implicitHeight + 24
                         color: root.theme.bgBase
-                        border.color: modelData.urgency === NotificationUrgency.Critical ? root.theme.urgencyCritical :
-                        modelData.urgency === NotificationUrgency.Low     ? root.theme.urgencyLow     : root.theme.bgBorder
-                        border.width: 1
                         clip: true
 
                         Accessible.role: Accessible.StaticText
@@ -82,18 +80,13 @@ Scope {
                         modelData.urgency === NotificationUrgency.Low       ? "[Low] "      : "") +
                         (modelData.appName || "Notification") + ": " + modelData.summary
 
+
+
                         HoverHandler {
                             id: cardHover
                             onHoveredChanged: notifCard.modelData.hovered = hovered
                         }
 
-                        NumberAnimation on opacity {
-                            id: entryAnim
-                            from: 0; to: 1
-                            duration: 200
-                            easing.type: Easing.OutCubic
-                            running: false
-                        }
                         Component.onCompleted: entryAnim.start()
 
                         Rectangle {
@@ -101,7 +94,8 @@ Scope {
                             height: parent.height
                             anchors.left: parent.left
                             anchors.verticalCenter: parent.verticalCenter
-                            color: root.theme.accentPrimary
+                            color: notifCard.modelData.urgency === NotificationUrgency.Critical ? root.theme.urgencyCritical :
+                            notifCard.modelData.urgency === NotificationUrgency.Low      ? root.theme.urgencyLow      : root.theme.urgencyNormal
                         }
 
                         Rectangle {
@@ -300,7 +294,6 @@ Scope {
                                     id: progressBar
                                     height: parent.height
                                     width: parent.width
-                                    radius: 1
                                     color: notifCard.modelData.urgency === NotificationUrgency.Critical
                                     ? root.theme.urgencyCritical : root.theme.urgencyNormal
                                     opacity: 0.6
@@ -327,6 +320,28 @@ Scope {
                             z: -1
                             onClicked: notifCard.modelData.dismiss()
                             cursorShape: Qt.PointingHandCursor
+                        }
+
+
+                        Rectangle {
+                            id: appearBar
+                            height: parent.height
+                            width: parent.width
+
+                            color: root.theme.bgSelected
+
+                            clip: true
+
+                            SequentialAnimation {
+                                running: notifCard.modelData.urgency !== NotificationUrgency.Critical
+                                PauseAnimation { duration: 2 }
+                                NumberAnimation {
+                                    target: appearBar
+                                    property: "width"
+                                    to: 0
+                                    duration: 300
+                                }
+                            }
                         }
                     }
                 }

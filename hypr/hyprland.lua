@@ -13,31 +13,13 @@ hl.monitor({
     scale    = 1.6,
 })
 
--- hl.monitor({
---     output = "DP-3",
---     mode = "1920x1080@60",
---     position = "-1920x0,1"
--- })
+hl.monitor({
+    output = "DP-3",
+    mode = "1920x1080@60",
+    position = "-1920x0,1"
+})
 --
--- hl.monitor({
---     output = "DP-3",
---     mode = "1920x1080@60",
---     position = "0x1080,1"
--- })
-
---##################
---## MY PROGRAMS ###
---##################
-
-local terminal = "kitty"
-local fileManager = "thunar"
-local menu = "fuzzel"
-
-local music = "qobuz-player"
-
-local browser = "/usr/bin/flatpak run --env=MESA_LOADER_DRIVER_OVERRIDE=zink --branch=stable --arch=aarch64 --command=launch-script.sh --file-forwarding app.zen_browser.zen" -- To be changed to helium
-local messager1 = ""
-local messager2 = "discord"
+-- hl.monitor(ocal messager2 = "discord"
 local screenshot1 = "hyprshot -m window --clipboard-only"
 local screenshot2 = "hyprshot -m output --clipboard-only"
 
@@ -190,7 +172,7 @@ hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd("telegram-desktop"))
 
 hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd("kitty"))
 
-hl.bind(mainMod .. " + " .. "F", hl.dsp.exec_cmd("/usr/bin/flatpak run --env=MESA_LOADER_DRIVER_OVERRIDE=zink --branch=stable --arch=aarch64 --command=launch-script.sh --file-forwarding app.zen_browser.zen"))
+hl.bind(mainMod .. " + " .. "F", hl.dsp.exec_cmd("/usr/bin/helium-browser/helium-browser"))
 
 hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("[float; size 10% 20%] kitty -e impala"))
 
