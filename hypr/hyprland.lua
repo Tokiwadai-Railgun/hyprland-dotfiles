@@ -23,11 +23,13 @@ hl.monitor({
 local screenshot1 = "hyprshot -m window --clipboard-only"
 local screenshot2 = "hyprshot -m output --clipboard-only"
 
-local editor = "kitty -e nvim"
-local fileExplorer = "kitty -e yazi"
+local browser = "helium"
+local terminal = "kitty"
+local editor = terminal .." -e nvim"
+local fileExplorer = terminal .. " -e yazi"
 local misc = "steam"
-local wifi = "kitty -e impala"
-local bluetooth = "kitty -e bluetui"
+local wifi = terminal .. " -e impala"
+local bluetooth = terminal .. " -e bluetui"
 
 --################
 --## AUTOSTART ###
@@ -170,25 +172,25 @@ hl.bind(mainMod .. " + " .. "Z", hl.dsp.exec_cmd("thunar"))
 
 hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd("telegram-desktop"))
 
-hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd("kitty"))
+hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 
-hl.bind(mainMod .. " + " .. "F", hl.dsp.exec_cmd("/usr/bin/helium-browser/helium-browser"))
+hl.bind(mainMod .. " + " .. "F", hl.dsp.exec_cmd(browser))
 
-hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("[float; size 10% 20%] kitty -e impala"))
+hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("[float; size 10% 20%] " .. wifi))
 
-hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("[float; size 80% 80%] kitty -e bluetui"))
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("[float; size 80% 80%] " .. bluetooth))
 
 hl.bind("Print", hl.dsp.exec_cmd("$screenshot0"))
 
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m window --clipboard-only"))
 
-hl.bind(mainMod .. " + " .. "S", hl.dsp.exec_cmd("steam"))
+hl.bind(mainMod .. " + " .. "S", hl.dsp.exec_cmd(misc))
 
 hl.bind(mainMod .. " + " .. "V", hl.dsp.exec_cmd("[float; size 50% 50%] pavucontrol"))
 
 hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd("hyprshot --mode region"))
 
-hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("[float; size 80% 80%] kitty -e yazi"))
+hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("[float; size 80% 80%] " .. fileExplorer))
 
 hl.bind(mainMod .. " + " .. "BACKSPACE", hl.dsp.exec_cmd("hyprlock"))
 
