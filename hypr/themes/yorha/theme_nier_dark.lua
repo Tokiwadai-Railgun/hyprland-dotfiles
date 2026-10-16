@@ -11,7 +11,31 @@ hl.config({
 
 hl.plugin("hyprbars", function()
     bar_color = "rgb(c2bda6)",
-    col.text = "rgb(48463d)",
-    hyprbars-button = { "rgb(c2bda6)", 30, "◬", "hyprctl dispatch killactive" },
-    hyprbars-button = { "rgb(c2bda6)", 30, "▽", "hyprctl dispatch fullscreen 1" },
 end)
+
+hl.config({
+    plugin = {
+        hyprbars = {
+            bar_color = "rgb(48463d)",
+            col = { 
+                text = "rgb(c2bda6)"
+            }
+        }
+    }
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(48463d)",
+    fg_color = "rgb(c2bda6)",
+    size = 30,
+    icon = "◬",
+    action = "hyprctl dispatch 'hl.dsp.window.close()'"
+})
+
+hl.plugin.hyprbars.add_button({
+    bg_color = "rgb(48463d)",
+    fg_color = "rgb(c2bda6)",
+    size = 30,
+    icon = "▽",
+    action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']]
+})

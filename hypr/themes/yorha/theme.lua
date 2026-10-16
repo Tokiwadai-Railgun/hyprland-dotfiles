@@ -75,4 +75,3 @@ hl.bind("SUPER + v", hl.dsp.exec_cmd("ags -b player -t player"))
 
 -- windowrule=move 400 510,title:^(fly_is_foot)$
 require("themes.yorha.theme_nier_light")
-
