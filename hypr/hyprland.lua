@@ -176,9 +176,9 @@ hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(terminal))
 
 hl.bind(mainMod .. " + " .. "F", hl.dsp.exec_cmd(browser))
 
-hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("[float; size 10% 20%] " .. wifi))
+hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd(wifi, { float = true, size = { "monitor_w * 0.8", "monitor_h * 0.8" } }))
 
-hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("[float; size 80% 80%] " .. bluetooth))
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd(bluetooth, { float = true, size = { "monitor_w * 0.8", "monitor_h * 0.8" } }))
 
 hl.bind("Print", hl.dsp.exec_cmd("$screenshot0"))
 
