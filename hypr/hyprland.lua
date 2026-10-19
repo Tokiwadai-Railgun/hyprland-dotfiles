@@ -192,6 +192,7 @@ hl.bind(mainMod .. " + " .. "P", hl.dsp.exec_cmd("hyprshot --mode region"))
 
 hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("[float; size 80% 80%] " .. fileExplorer))
 
+hl.bind("XF86PowerOff", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + " .. "BACKSPACE", hl.dsp.exec_cmd("hyprlock"))
 
 -- PulseAudio controls
