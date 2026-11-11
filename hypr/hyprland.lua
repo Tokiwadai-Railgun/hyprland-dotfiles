@@ -7,10 +7,10 @@
 --###############
 
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "2560x1600@60",
+    output   = "DP-2",
+    mode     = "1920x1080@144",
     position = "0x0",
-    scale    = 1.6,
+    -- scale    = 1.6,
 })
 
 hl.monitor({
@@ -23,7 +23,7 @@ hl.monitor({
 local screenshot1 = "hyprshot -m window --clipboard-only"
 local screenshot2 = "hyprshot -m output --clipboard-only"
 
-local browser = "helium"
+local browser = "helium-browser"
 local terminal = "kitty"
 local editor = terminal .." -e nvim"
 local fileExplorer = terminal .. " -e yazi"
